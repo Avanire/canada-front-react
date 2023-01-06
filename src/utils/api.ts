@@ -15,3 +15,7 @@ export const getSettingByName = (name: string) => {
 export const getArticles = () => {
     return getRequest(`${API_URL}/articles`);
 }
+
+export const getMenu = (name: string) => {
+    return getRequest(`${API_URL}/menu/${name}`);
+}

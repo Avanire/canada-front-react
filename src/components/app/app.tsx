@@ -4,6 +4,7 @@ import HeaderTop from "../header-top/header-top";
 import '../../models/init';
 import {Container} from "@mui/material";
 import HeaderMiddle from "../header-middle/header-middle";
+import HeaderBottom from "../header-bottom/header-bottom";
 
 const App: FC = () => {
     return (
@@ -12,6 +13,7 @@ const App: FC = () => {
                 <Container>
                     <HeaderTop/>
                     <HeaderMiddle/>
+                    <HeaderBottom/>
                 </Container>
             </header>
         </>
