@@ -1,0 +1,12 @@
+.button {
+    background: #F8F8FA;
+    border-radius: 8px;
+    padding: 0.7em 1em;
+    width: 3.75rem;
+    height: 3.125rem;
+    cursor: pointer;
+}
+
+.button image {
+    width: 100%;
+}

@@ -1,0 +1,6 @@
+.phone {
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--text-color);
+    font-size: 1.125rem;
+}
