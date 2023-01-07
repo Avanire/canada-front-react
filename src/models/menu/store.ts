@@ -1,12 +1,8 @@
 import {createStore} from "effector";
-
-interface IMenu {
-    readonly id: number;
-    readonly title: string;
-    readonly url: string;
-    readonly icon_class: string;
-    readonly children: Array<IMenu>;
-}
+import {IMenu} from "../../utils/types";
 
 export const $menu = createStore<Array<IMenu>>([]);
 export const $menuIsLoaded = createStore<boolean>(false);
+
+export const $categories = createStore<Array<IMenu>>([]);
+export const $categoriesIsLoaded = createStore<boolean>(false);

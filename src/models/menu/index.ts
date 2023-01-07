@@ -1,8 +1,11 @@
-import {menuRequest} from "./event";
-import {$menu, $menuIsLoaded} from "./store";
+import {categoryRequest, menuRequest} from "./event";
+import {$categories, $categoriesIsLoaded, $menu, $menuIsLoaded} from "./store";
 
 export const modelMenu = {
     menuRequest,
     $menu,
-    $menuIsLoaded
+    $menuIsLoaded,
+    categoryRequest,
+    $categories,
+    $categoriesIsLoaded
 }
