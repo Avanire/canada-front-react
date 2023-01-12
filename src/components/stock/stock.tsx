@@ -21,7 +21,7 @@ const Stock: FC = () => {
 
 
     return (
-        <section>
+        <section className={`mb-20`}>
             <div className={`flex justify-between items-center mb-8`}>
                 <h3>{heading}</h3>
                 <Link to='#'>{allStocks}</Link>

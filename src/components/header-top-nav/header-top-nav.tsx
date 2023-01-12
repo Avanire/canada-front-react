@@ -1,19 +1,19 @@
 import React, {FC, useEffect} from "react";
 import {useStore} from "effector-react";
-import {modelArticles} from "../../models/articles";
 import styles from './header-top-nav.module.css';
 import {Link} from "react-router-dom";
+import {modelMenu} from "../../models/menu";
 
-const HeaderTopNav:FC = () => {
-    const articles = useStore(modelArticles.$articles);
+const HeaderTopNav: FC = () => {
+    const topMenu = useStore(modelMenu.$topMenu);
 
     useEffect(() => {
-        modelArticles.articleRequest();
+        modelMenu.topMenuRequest('topMenu');
     }, []);
 
     return (
         <nav className={styles.nav}>
-            {articles.map(item => <Link key={item.id} to={item.alias} >{item.name}</Link>)}
+            {topMenu.map(item => <Link key={item.id} to={item.url}>{item.title}</Link>)}
         </nav>
     );
 }

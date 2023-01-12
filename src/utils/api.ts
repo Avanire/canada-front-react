@@ -23,3 +23,7 @@ export const getMenu = (name: string) => {
 export const getProducts = () => {
     return getRequest(`${API_URL}/products`);
 }
+
+export const getBanner = (position: string) => {
+    return getRequest(`${API_URL}/banner/${position}`);
+}

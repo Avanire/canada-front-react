@@ -6,3 +6,6 @@ export const $menuIsLoaded = createStore<boolean>(false);
 
 export const $categories = createStore<Array<IMenu>>([]);
 export const $categoriesIsLoaded = createStore<boolean>(false);
+
+export const $topMenu = createStore<Array<IMenu>>([]);
+export const $topMenuIsLoaded = createStore<boolean>(false);
