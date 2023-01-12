@@ -10,7 +10,7 @@ const Search: FC = () => {
     }
 
     return (
-        <form action="" method='POST' className={styles.searchForm}>
+        <form action="" method='POST' className={`${styles.searchForm} basis-96 h-12 `}>
             <input type="text" placeholder='Поиск по сайту' value={search} className={styles.searchInput}
                    onChange={handleSearch}/>
             <button className={styles.searchBtn}><img src={searchImage} alt=""/></button>

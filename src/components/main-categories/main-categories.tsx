@@ -2,7 +2,6 @@ import React, {FC, useEffect} from "react";
 import {useStore} from "effector-react";
 import {modelMenu} from "../../models/menu";
 import MainCategory from "../main-category/main-category";
-import {Grid} from "@mui/material";
 
 const MainCategories: FC = () => {
     const categories = useStore(modelMenu.$categories);
@@ -13,10 +12,11 @@ const MainCategories: FC = () => {
 
     return (
         <>
-            <h2>Товары по питомцу</h2>
-            <Grid container columnGap={3} justifyContent='space-between'>
-                {categories.map(item => <MainCategory name={item.title} link={item.url} children={item.children} key={item.id}/>)}
-            </Grid>
+            <h2 className={`mb-9`}>Товары по питомцу</h2>
+            <div className={`flex flex-wrap justify-between gap-4 mb-20`}>
+                {categories.map(item => <MainCategory name={item.title} link={item.url} children={item.children}
+                                                      key={item.id}/>)}
+            </div>
         </>
     );
 }

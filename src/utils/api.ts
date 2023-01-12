@@ -19,3 +19,7 @@ export const getArticles = () => {
 export const getMenu = (name: string) => {
     return getRequest(`${API_URL}/menu/${name}`);
 }
+
+export const getProducts = () => {
+    return getRequest(`${API_URL}/products`);
+}

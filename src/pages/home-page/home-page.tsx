@@ -1,12 +1,13 @@
 import React, {FC} from "react";
 import MainCategories from "../../components/main-categories/main-categories";
-import {Container} from "@mui/material";
+import Stock from "../../components/stock/stock";
 
 const HomePage: FC = () => {
     return (
-        <Container>
+        <main className={`container mx-auto`}>
             <MainCategories/>
-        </Container>
+            <Stock/>
+        </main>
     );
 }
 

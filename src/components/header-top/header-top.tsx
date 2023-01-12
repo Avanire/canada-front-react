@@ -2,7 +2,7 @@ import React, {FC, useEffect} from "react";
 import {useStore} from "effector-react";
 import HeaderTopNav from "../header-top-nav/header-top-nav";
 import {modelSetting} from "../../models/settings";
-import {Grid, Link} from "@mui/material";
+import {Link} from "react-router-dom";
 
 const HeaderTop: FC = () => {
     const address = useStore(modelSetting.$address);
@@ -12,11 +12,11 @@ const HeaderTop: FC = () => {
     }, []);
 
     return (
-        <Grid container paddingTop={2.4} paddingBottom={4.5}>
-            <Grid item xs={12} md={3}>{address}</Grid>
-            <Grid item xs={12} md={7}><HeaderTopNav/></Grid>
-            <Grid item xs={12} md={2} textAlign='right'><Link href='#'>Вход</Link> / <Link href='#'>Регистрация</Link></Grid>
-        </Grid>
+        <section className={`flex gap-8 my-5 flex-wrap`}>
+            <div>{address}</div>
+            <HeaderTopNav/>
+            <div className={`ml-auto`}><Link to='#'>Вход</Link> / <Link to='#'>Регистрация</Link></div>
+        </section>
     );
 }
 

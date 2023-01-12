@@ -9,7 +9,6 @@
 
 .childrenLinks {
     display: flex;
-    column-gap: 0.5em;
 }
 .link {
     border: 1px solid #C7C7C7;

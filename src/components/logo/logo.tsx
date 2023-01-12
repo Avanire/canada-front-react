@@ -1,10 +1,10 @@
 import React, {FC} from "react";
 import logo from '../../images/logo.png';
-import {Link} from "@mui/material";
+import {Link} from "react-router-dom";
 
 const Logo: FC = () => {
     return (
-        <Link href='/'>
+        <Link to='/' className={`basis-52`}>
             <img src={logo} alt="" />
         </Link>
     );
