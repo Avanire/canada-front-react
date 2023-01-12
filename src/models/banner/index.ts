@@ -1,8 +1,21 @@
-import {mainBannerRequest} from "./event";
-import {$mainBanner, $mainBannerIsLoading} from "./store";
+import {mainBannerBotRequest, mainBannerMiddleRequest, mainBannerTopRequest} from "./event";
+import {
+    $mainBannerBot,
+    $mainBannerBotIsLoading,
+    $mainBannerMiddle,
+    $mainBannerMiddleIsLoading,
+    $mainBannerTop,
+    $mainBannerTopIsLoading
+} from "./store";
 
 export const modelBanner = {
-    mainBannerRequest,
-    $mainBanner,
-    $mainBannerIsLoading
+    mainBannerTopRequest,
+    $mainBannerTop,
+    $mainBannerTopIsLoading,
+    mainBannerMiddleRequest,
+    $mainBannerMiddle,
+    $mainBannerMiddleIsLoading,
+    mainBannerBotRequest,
+    $mainBannerBot,
+    $mainBannerBotIsLoading
 }

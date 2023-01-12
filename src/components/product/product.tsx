@@ -5,6 +5,7 @@ import styles from './product.module.css';
 import {Link} from "react-router-dom";
 import Bookmark from "../../images/Bookmark.svg";
 import HeaderButton from "../header-button/header-button";
+import Button from "../button/button";
 
 const Product: FC<IProduct> = ({
                                    image,
@@ -36,10 +37,10 @@ const Product: FC<IProduct> = ({
             <div className={`mb-3`}>
                 {old_price ? (<><span className={`${styles.price} mr-2`}>{price} {RUB}</span> <span
                     className={`${styles.oldPrice} line-through`}>{old_price} {RUB}</span></>) : (
-                    <span>{price} {RUB}</span>)}
+                    <span className={`${styles.price}`}>{price} {RUB}</span>)}
             </div>
             <div className={`flex`}>
-                <button className={`${styles.cartBtn} py-3 px-6 mr-3`}>В корзину</button>
+                <Button name='В корзину' />
                 <HeaderButton image={Bookmark} link='#'/>
             </div>
         </section>

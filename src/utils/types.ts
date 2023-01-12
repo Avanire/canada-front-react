@@ -19,3 +19,10 @@ export interface IProduct {
     hit: boolean;
     new_product: boolean;
 }
+
+export interface IBanner {
+    title: string;
+    description: string;
+    link: string | null;
+    image: string;
+}

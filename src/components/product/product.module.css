@@ -35,8 +35,3 @@
     font-weight: 500;
     line-height: 140%;
 }
-.cartBtn {
-    color: var(--white-color);
-    background: var(--product-cart-color);
-    border-radius: 8px;
-}
