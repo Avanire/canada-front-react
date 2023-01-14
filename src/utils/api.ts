@@ -27,3 +27,7 @@ export const getProducts = () => {
 export const getBanner = (position: string) => {
     return getRequest(`${API_URL}/banner/${position}`);
 }
+
+export const getBrands = () => {
+    return getRequest(`${API_URL}/brands`);
+}

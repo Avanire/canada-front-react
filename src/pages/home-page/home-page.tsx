@@ -6,6 +6,8 @@ import {modelProduct} from "../../models/products";
 import {IProduct} from "../../utils/types";
 import MainProduct from "../../components/main-product/main-product";
 import {modelBanner} from "../../models/banner";
+import {modelBrands} from "../../models/brand";
+import ImageList from "../../components/image-list/image-list";
 
 const HomePage: FC = () => {
     const headingStock = 'Акции';
@@ -16,6 +18,7 @@ const HomePage: FC = () => {
     const bannerTop = useStore(modelBanner.$mainBannerTop);
     const bannerMid = useStore(modelBanner.$mainBannerMiddle);
     const products = useStore(modelProduct.$products);
+    const brands = useStore(modelBrands.$brands);
 
     const stocksProduct = useMemo<Array<IProduct>>((): Array<IProduct> => {
         return products.filter(item => item.hit || item.new_product || item.old_price).slice(0, 4);
@@ -23,6 +26,10 @@ const HomePage: FC = () => {
 
     const popularProduct = useMemo<Array<IProduct>>((): Array<IProduct> => {
         return products.filter(item => item.hit).slice(0, 4);
+    }, [products]);
+
+    const recommendedProduct = useMemo<Array<IProduct>>(() => {
+        return products.filter(item => item.recommended).slice(0, 4);
     }, [products]);
 
     useEffect(() => {
@@ -34,6 +41,10 @@ const HomePage: FC = () => {
         modelBanner.mainBannerMiddleRequest('main-middle');
     }, []);
 
+    useEffect(() => {
+        modelBrands.brandsRequest();
+    }, []);
+
     return (
         <main className={`container mx-auto`}>
             <MainCategories/>
@@ -41,6 +52,8 @@ const HomePage: FC = () => {
             {bannerTop ? <MainBanner {...bannerTop} /> : null}
             <MainProduct heading={headingPopular} linkStock={linkPopular} products={popularProduct}/>
             {bannerMid ? <MainBanner {...bannerMid} /> : null}
+            <ImageList heading='Популярные бренды' link='Все бренды' list={brands} />
+            <MainProduct heading='Рекомендуем вам' products={recommendedProduct} />
         </main>
     );
 }

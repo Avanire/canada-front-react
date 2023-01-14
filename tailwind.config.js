@@ -14,6 +14,7 @@ module.exports = {
             'product-sales-color': '#A5A5A5',
             'product-cart-color': '#787878',
             'product-tips-color': '#A3A3A3',
+            'link-more': '#7A7A7A'
         },
         extend: {},
     },

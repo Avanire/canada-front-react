@@ -18,6 +18,7 @@ export interface IProduct {
     old_price: number | null;
     hit: boolean;
     new_product: boolean;
+    recommended: boolean;
 }
 
 export interface IBanner {
@@ -25,4 +26,17 @@ export interface IBanner {
     description: string;
     link: string | null;
     image: string;
+}
+
+export interface IImageList {
+    heading: string;
+    link: string;
+    list: Array<IImage>;
+}
+
+export interface IImage {
+    id: number;
+    image: string;
+    name: string;
+    link: string;
 }
