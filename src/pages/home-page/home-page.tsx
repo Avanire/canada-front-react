@@ -8,6 +8,7 @@ import MainProduct from "../../components/main-product/main-product";
 import {modelBanner} from "../../models/banner";
 import {modelBrands} from "../../models/brand";
 import ImageList from "../../components/image-list/image-list";
+import Advantages from "../../components/advantages/advantages";
 
 const HomePage: FC = () => {
     const headingStock = 'Акции';
@@ -54,6 +55,7 @@ const HomePage: FC = () => {
             {bannerMid ? <MainBanner {...bannerMid} /> : null}
             <ImageList heading='Популярные бренды' link='Все бренды' list={brands} />
             <MainProduct heading='Рекомендуем вам' products={recommendedProduct} />
+            <Advantages />
         </main>
     );
 }
