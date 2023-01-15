@@ -9,6 +9,7 @@ import {modelBanner} from "../../models/banner";
 import {modelBrands} from "../../models/brand";
 import ImageList from "../../components/image-list/image-list";
 import Advantages from "../../components/advantages/advantages";
+import MainSlider from "../../components/main-slider/main-slider";
 
 const HomePage: FC = () => {
     const headingStock = 'Акции';
@@ -48,14 +49,15 @@ const HomePage: FC = () => {
 
     return (
         <main className={`container mx-auto`}>
+            <MainSlider/>
             <MainCategories/>
             <MainProduct heading={headingStock} linkStock={linkStock} products={stocksProduct}/>
             {bannerTop ? <MainBanner {...bannerTop} /> : null}
             <MainProduct heading={headingPopular} linkStock={linkPopular} products={popularProduct}/>
             {bannerMid ? <MainBanner {...bannerMid} /> : null}
-            <ImageList heading='Популярные бренды' link='Все бренды' list={brands} />
-            <MainProduct heading='Рекомендуем вам' products={recommendedProduct} />
-            <Advantages />
+            <ImageList heading='Популярные бренды' link='Все бренды' list={brands}/>
+            <MainProduct heading='Рекомендуем вам' products={recommendedProduct}/>
+            <Advantages/>
         </main>
     );
 }

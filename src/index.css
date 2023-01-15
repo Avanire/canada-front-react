@@ -3,30 +3,36 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'PT Root UI';
+  font-family: 'Golos';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/pt-root-ui_regular.woff') format('woff');
+  src: url('./fonts/golos-text_regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'PT Root UI';
+  font-family: 'Golos';
   font-style: normal;
   font-weight: 700;
-  src: url('./fonts/pt-root-ui_bold.woff') format('woff');
+  src: url('./fonts/golos-text_bold.woff') format('woff');
 }
 
-:root {
-  box-sizing: border-box;
-  --link-color: #545454;
-  --text-color: #000;
-  --white-color: #fff;
-  --bg-color: #F8F8FA;
-  --product-main-color: #252525;
-  --product-brand-color: #494949;
-  --product-sales-color: #A5A5A5;
-  --product-cart-color: #787878;
-  --product-tips-color: #A3A3A3;
+@layer base {
+  :root {
+    box-sizing: border-box;
+    --link-color: #677178;
+    --text-color: #1C1F22;
+    --white-color: #fff;
+    --bg-color: #F8F8FA;
+    --product-main-color: #252525;
+    --product-brand-color: #494949;
+    --product-sales-color: #A5A5A5;
+    --product-cart-color: #787878;
+    --product-tips-color: #A3A3A3;
+    --gray-1: #333333;
+    --main-purple: #8168F0;
+    --main-orange: #F98026;
+    --menu-link: #494F54;
+  }
 }
 
 *,
@@ -37,7 +43,7 @@
 
 body {
   margin: 0;
-  font-family: 'PT Root UI', Arial, sans-serif;
+  font-family: 'Golos', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--white-color);

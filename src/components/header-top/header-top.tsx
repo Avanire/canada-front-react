@@ -12,10 +12,10 @@ const HeaderTop: FC = () => {
     }, []);
 
     return (
-        <section className={`flex gap-8 my-5 flex-wrap`}>
-            <div>{address}</div>
+        <section className={`flex gap-8 my-5 flex-wrap items-center`}>
+            <div className={`font-normal text-sm`}>{address}</div>
             <HeaderTopNav/>
-            <div className={`ml-auto`}><Link to='#'>Вход</Link> / <Link to='#'>Регистрация</Link></div>
+            <div className={`ml-auto`}><Link className={`text-sm text-[var(--text-color)]`} to='#'>Вход</Link> / <Link className={`text-sm text-[var(--text-color)]`} to='#'>Регистрация</Link></div>
         </section>
     );
 }

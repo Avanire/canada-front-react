@@ -31,3 +31,7 @@ export const getBanner = (position: string) => {
 export const getBrands = () => {
     return getRequest(`${API_URL}/brands`);
 }
+
+export const getSliders = () => {
+    return getRequest(`${API_URL}/sliders`);
+}

@@ -15,7 +15,7 @@ const MainMenu: FC = () => {
     return (
         <nav className={`${styles.menu} mb-2`}>
             {menu.map(item => item.children.length > 0 ? (
-                <div className={styles.menuItemParent} key={uuid()}>
+                <div className={`${styles.menuItemParent} ${item.url === 'dog' ? styles.dog : ''} ${item.url === 'cat' ? styles.cat : ''}`} key={uuid()}>
                     <Link to={item.url}>
                         {item.title}
                     </Link>
@@ -26,7 +26,12 @@ const MainMenu: FC = () => {
                 </div>
             ) : (
                 <Link
-                    className={`${styles.menuItem} ${item.icon_class && item.icon_class.includes('voyager-star-two') ? styles.star : ''} ${item.icon_class && item.icon_class.includes('last') ? styles.last : ''}`}
+                    className={`
+                        ${styles.menuItem} 
+                        ${item.icon_class && item.icon_class.includes('fire') ? styles.fire : ''} 
+                        ${item.icon_class && item.icon_class.includes('flash') ? styles.flash : ''} 
+                        ${item.icon_class && item.icon_class.includes('last') ? styles.last : ''}
+                    `}
                     to={item.url}
                     key={uuid()}
                 >

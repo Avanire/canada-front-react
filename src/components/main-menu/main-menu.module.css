@@ -4,9 +4,11 @@
 }
 
 .menuItem {
-    padding: 0.75em 0;
-    color: var(--text-color);
+    padding: 0.5625rem 0.875rem;
     position: relative;
+    border-radius: 12px;
+    border: 0.125rem solid rgba(129, 104, 240, 0.2);
+    color: var(--menu-link);
 }
 
 .menuItem:hover {
@@ -15,19 +17,57 @@
 
 .menuItemParent {
     composes: menuItem;
-    padding-right: 1.25em;
+    padding: 0.8125rem 2.125rem 0.8125rem 2.875rem;
     transition: all 0.25ms linear;
+}
+
+.cat {
+    background: rgba(129, 104, 240, 0.1);
+    font-weight: 500;
+    line-height: 110%;
+    color: var(--main-purple);
+    border: unset;
+}
+
+.cat::before,
+.dog::before {
+    position: absolute;
+    content: '';
+    top: 10px;
+    left: 16px;
+    background-image: url("../../images/Catface.svg");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+.dog {
+    composes: cat;
+    background: rgba(249, 128, 38, 0.1);
+    color: var(--main-orange);
+}
+
+.dog::before {
+    background-image: url("../../images/Dogface.svg");
 }
 
 .menuItemParent::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background-image: url('../../images/Arrow down.svg');
-    top: 1em;
-    right: 0;
+    width: 14px;
+    height: 14px;
+    top: 17px;
+    right: 17px;
     cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.cat::after {
+    background-image: url("../../images/arrow-down-purple.svg");
+}
+
+.dog::after {
+    background-image: url("../../images/arrow-down-orange.svg");
 }
 
 .childrenMenu {
@@ -40,26 +80,34 @@
     flex-direction: column;
     min-width: 10em;
     row-gap: 6px;
+    top: 54px;
+    z-index: 200;
 }
 
 .menuItemParent:hover .childrenMenu {
     visibility: visible;
 }
 
-.menuItem.star {
-    padding-left: 1.625em;
+.fire,
+.flash {
+    padding-left: 2.625rem;
 }
 
-.menuItem.star::before {
+.fire::before,
+.flash::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 0;
-    top: 0.8em;
-    background-image: url("../../images/star.svg");
+    width: 24px;
+    height: 24px;
+    left: 12px;
+    top: 10px;
+    background-image: url("../../images/Fire.svg");
 }
 
-.menuItem.last {
+.flash::before {
+    background-image: url("../../images/Highvoltage.svg");
+}
+
+.last {
     margin-left: auto;
 }

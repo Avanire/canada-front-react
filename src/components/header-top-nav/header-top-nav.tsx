@@ -13,7 +13,7 @@ const HeaderTopNav: FC = () => {
 
     return (
         <nav className={styles.nav}>
-            {topMenu.map(item => <Link key={item.id} to={item.url}>{item.title}</Link>)}
+            {topMenu.map(item => <Link key={item.id} to={item.url} className={`text-sm text-[var(--link-color)]`}>{item.title}</Link>)}
         </nav>
     );
 }

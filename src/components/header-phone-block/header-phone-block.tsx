@@ -1,12 +1,11 @@
 import React, {FC} from 'react';
 import Phone from "../phone/phone";
-import styles from './header-phone-block.module.css';
 
 const HeaderPhoneBlock: FC = () => {
     return (
-        <div>
+        <div className={`basis-40`}>
             <Phone/>
-            <div className={styles.callback}>Заказать звонок</div>
+            <div className={`text-[var(--link-color)] text-bases cursor-pointer`}>Заказать звонок</div>
         </div>
     );
 }

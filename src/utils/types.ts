@@ -1,3 +1,5 @@
+import {SyntheticEvent} from "react";
+
 export interface IMenu {
     readonly id: number;
     readonly title: string;
@@ -39,4 +41,13 @@ export interface IImage {
     image: string;
     name: string;
     link: string;
+}
+
+export interface ISlide {
+    id: number;
+    name: string;
+    image: string;
+    link: string;
+    handleClickNext: (e: SyntheticEvent) => void;
+    handleClickPrev: (e: SyntheticEvent) => void;
 }
