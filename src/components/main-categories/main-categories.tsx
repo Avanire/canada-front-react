@@ -11,13 +11,10 @@ const MainCategories: FC = () => {
     }, []);
 
     return (
-        <>
-            <h2 className={`mb-9`}>Товары по питомцу</h2>
-            <div className={`flex flex-wrap justify-between gap-4 mb-20`}>
-                {categories.map(item => <MainCategory name={item.title} link={item.url} children={item.children}
-                                                      key={item.id}/>)}
-            </div>
-        </>
+        <div className={`flex flex-wrap justify-between gap-4 mb-20`}>
+            {categories.map(item => <MainCategory name={item.title} link={item.url} children={item.children}
+                                                  key={item.id} image={item.image}/>)}
+        </div>
     );
 }
 

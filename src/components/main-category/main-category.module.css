@@ -1,17 +1,29 @@
 .category {
-    background-color: var(--bg-color);
     border-radius: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.category h3 {
-    margin: 0 0 4em;
+.category:nth-child(even) {
+    background-image: url("../../images/category-bg-even.png");
 }
 
-.childrenLinks {
-    display: flex;
+.category:nth-child(odd) {
+    background-image: url("../../images/category-bg-odd.png");
 }
-.link {
-    border: 1px solid #C7C7C7;
-    border-radius: 78px;
-    padding: 0.625em 1.25em;
+
+.category:nth-child(even) h3 {
+    color: var(--main-purple);
+}
+
+.category:nth-child(odd) h3 {
+    color: var(--main-orange);
+}
+
+.category:nth-child(even) a {
+    color: var(--main-purple);
+}
+
+.category:nth-child(odd) a {
+    color: var(--main-orange);
 }

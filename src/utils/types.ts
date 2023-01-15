@@ -6,21 +6,22 @@ export interface IMenu {
     readonly url: string;
     readonly icon_class: string;
     readonly children: Array<IMenu>;
+    readonly image?: string;
 }
 
 export interface IProduct {
-    id: number;
-    alias: string;
-    image: string;
-    rating: number | null;
-    count_rating: number | null;
-    name: string;
-    brand: number;
-    price: number;
-    old_price: number | null;
-    hit: boolean;
-    new_product: boolean;
-    recommended: boolean;
+    readonly id: number;
+    readonly alias: string;
+    readonly image: string;
+    readonly rating: number | null;
+    readonly count_rating: number | null;
+    readonly name: string;
+    readonly brand: number;
+    readonly price: number;
+    readonly old_price: number | null;
+    readonly hit: boolean;
+    readonly new_product: boolean;
+    readonly recommended: boolean;
 }
 
 export interface IBanner {
