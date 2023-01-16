@@ -8,7 +8,7 @@ interface IButton {
 
 const Button:FC<IButton> = ({name, handleClick}) => {
     return (
-        <button onClick={handleClick} className={`${styles.cartBtn} py-3 px-6 mr-3`}>{name}</button>
+        <button onClick={handleClick} className={`${styles.cartBtn} py-3 px-7 font-semibold`}>{name}</button>
     );
 }
 
