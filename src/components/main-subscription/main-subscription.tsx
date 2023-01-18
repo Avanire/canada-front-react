@@ -1,15 +1,34 @@
-import React, {FC} from "react";
+import React, {FC, useEffect, useState} from "react";
+import {useStore} from "effector-react";
+import {modelSubscribe} from "../../models/subscription";
 
 const MainSubscription: FC = () => {
+    const sub = useStore(modelSubscribe.$subscribeSuccess);
+    const [email, setEmail] = useState<string>('');
+
+    useEffect(() => {
+        console.log(sub);
+    }, [sub]);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        modelSubscribe.subscribeRequest(email);
+    }
+
     return (
+        //TODO Сделать валидацию и на сервере проверку наличия почты
         <section className={`p-10 rounded-3xl bg-[var(--main-purple)] flex justify-between items-center`}>
             <div className={`basis-1/2`}>
                 <div className={`text-white font-bold text-2xl mb-3`}>Хочу быть в курсе акций и новинок</div>
                 <div className={`text-white text-sm`}>Подписывайтесь и получайте самые интересные предложения первыми</div>
             </div>
-            <form action="" method='POST' className={`basis-1/2`}>
+            <form action="" method='POST' className={`basis-1/2`} onSubmit={handleSubmit}>
                 <div className={`flex gap-2.5 mb-3`}>
-                    <input type="email" placeholder='Введите e-mail' className={`py-3.5 px-5 rounded-xl min-w-[360px]`} />
+                    <input type="email"
+                           placeholder='Введите e-mail'
+                           className={`py-3.5 px-5 rounded-xl min-w-[360px]`}
+                           onChange={e => setEmail(e.target.value)}
+                    />
                     <button className={`rounded-xl py-3.5 px-6 bg-white`}>Подписаться</button>
                 </div>
                 <div className={`text-white text-xs`}>Нажимая «Подписаться», вы соглашаетесь с политикой конфиденциальности</div>

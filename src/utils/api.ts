@@ -39,3 +39,19 @@ export const getSliders = () => {
 export const getMainText = () => {
     return getRequest(`${API_URL}/main-text`);
 }
+
+export const subscriptionRequest = (email: string) => {
+    const body = {
+        email: email
+    };
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    }
+
+    return getRequest(`${API_URL}/subscription`, options);
+}
