@@ -26,8 +26,8 @@ export interface IProduct {
 
 export interface IBanner {
     title: string;
-    description: string;
-    link: string | null;
+    description?: string;
+    link?: string;
     image: string;
 }
 

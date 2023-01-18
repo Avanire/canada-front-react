@@ -2,18 +2,19 @@ import React, {FC} from "react";
 import styles from './main-banner.module.css';
 import {Link} from "react-router-dom";
 import {IBanner} from "../../utils/types";
+import {STORAGE_URL} from "../../utils/constans";
 
 const MainBanner: FC<IBanner> = ({title, description, link, image}) => {
 
     return (
-        <section className={`${styles.banner} p-10 mb-16 flex items-center justify-between`}
-                 style={image ? {background: image} : {background: `#F6F7F9`}}
+        <section className={`${styles.banner} p-10 mb-16 flex items-center justify-between bg-no-repeat`}
+                 style={image ? {backgroundImage: `url(${STORAGE_URL}/${image})`} : {background: `#F6F7F9`}}
         >
-            <div>
+            <div className={`max-w-md`}>
                 <div className={`${styles.title} mb-3`}>{title}</div>
-                <div>{description}</div>
+                {description ? <div className={`opacity-60`}>{description}</div> : null}
+                {link ? <Link to={link} className={`${styles.link} py-3 px-6 mt-6 inline-block`}>Подробнее</Link> : ''}
             </div>
-            {link ? <Link to={link} className={`${styles.link} py-3 px-6 mr-3`}>Подробнее</Link> : ''}
         </section>
     );
 }
