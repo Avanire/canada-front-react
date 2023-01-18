@@ -41,7 +41,7 @@ export interface IImage {
     id: number;
     image: string;
     name: string;
-    link: string;
+    alias: string;
 }
 
 export interface ISlide {
