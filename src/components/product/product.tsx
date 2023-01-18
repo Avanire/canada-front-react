@@ -25,7 +25,7 @@ const Product: FC<IProduct> = ({
 
 
     return (
-        <section className={`basis-72 flex-grow flex flex-col`}>
+        <section className={`basis-72 flex-grow shrink-0 flex flex-col`}>
             <Link to={alias} className={`${styles.imageBlock} block mb-4 hover:no-underline`}>
                 <div className={`absolute top-2 left-2 flex gap-1`}>
                     {hit ? (<span><img src={hitImage} alt='хит'/></span>) : null}

@@ -13,7 +13,7 @@ import MainSlider from "../../components/main-slider/main-slider";
 
 const HomePage: FC = () => {
     const headingStock = 'Акции';
-    const linkStock = 'Все акции';
+    const linkStock = '#';
     const headingPopular = 'Популярное';
     const linkPopular = 'Смотреть все';
 
@@ -23,15 +23,15 @@ const HomePage: FC = () => {
     const brands = useStore(modelBrands.$brands);
 
     const stocksProduct = useMemo<Array<IProduct>>((): Array<IProduct> => {
-        return products.filter(item => item.hit || item.new_product || item.old_price).slice(0, 4);
+        return products.filter(item => item.hit || item.new_product || item.old_price);
     }, [products]);
 
     const popularProduct = useMemo<Array<IProduct>>((): Array<IProduct> => {
-        return products.filter(item => item.hit).slice(0, 4);
+        return products.filter(item => item.hit);
     }, [products]);
 
     const recommendedProduct = useMemo<Array<IProduct>>(() => {
-        return products.filter(item => item.recommended).slice(0, 4);
+        return products.filter(item => item.recommended);
     }, [products]);
 
     useEffect(() => {
