@@ -1,0 +1,10 @@
+.mainText {
+    background-image: url("../../images/main-text-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    color: var(--menu-link);
+    margin-bottom: 1rem;
+}

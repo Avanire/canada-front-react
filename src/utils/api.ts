@@ -35,3 +35,7 @@ export const getBrands = () => {
 export const getSliders = () => {
     return getRequest(`${API_URL}/sliders`);
 }
+
+export const getMainText = () => {
+    return getRequest(`${API_URL}/main-text`);
+}

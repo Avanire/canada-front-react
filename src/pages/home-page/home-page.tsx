@@ -10,6 +10,7 @@ import {modelBrands} from "../../models/brand";
 import ImageList from "../../components/image-list/image-list";
 import Advantages from "../../components/advantages/advantages";
 import MainSlider from "../../components/main-slider/main-slider";
+import MainText from "../../components/main-text/main-text";
 
 const HomePage: FC = () => {
     const headingStock = 'Акции';
@@ -57,6 +58,7 @@ const HomePage: FC = () => {
             {bannerMid ? <MainBanner {...bannerMid} /> : null}
             <ImageList heading='Популярные бренды' link='Все бренды' list={brands}/>
             <MainProduct heading='Рекомендуем вам' products={recommendedProduct}/>
+            <MainText/>
             <Advantages/>
         </main>
     );

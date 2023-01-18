@@ -5,3 +5,4 @@ import './products/init';
 import './banner/init';
 import './brand/init';
 import './sliders/init';
+import './main-text/init';
