@@ -1,11 +1,5 @@
 import {createStore} from "effector";
+import {IArticle} from "../../utils/types";
 
-type TArticle = {
-    readonly id: number;
-    readonly name: string;
-    readonly alias: string;
-    readonly text: string;
-};
-
-export const $articles = createStore<Array<TArticle>>([]);
+export const $articles = createStore<Array<IArticle>>([]);
 export const $articlesIsLoading = createStore<boolean>(false);

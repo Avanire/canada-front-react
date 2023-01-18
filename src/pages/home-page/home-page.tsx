@@ -11,6 +11,7 @@ import ImageList from "../../components/image-list/image-list";
 import Advantages from "../../components/advantages/advantages";
 import MainSlider from "../../components/main-slider/main-slider";
 import MainText from "../../components/main-text/main-text";
+import MainArticles from "../../components/main-articles/main-articles";
 
 const HomePage: FC = () => {
     const headingStock = 'Акции';
@@ -60,6 +61,7 @@ const HomePage: FC = () => {
             <MainProduct heading='Рекомендуем вам' products={recommendedProduct}/>
             <MainText/>
             <Advantages/>
+            <MainArticles/>
         </main>
     );
 }

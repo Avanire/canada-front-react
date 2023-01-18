@@ -52,3 +52,11 @@ export interface ISlide {
     handleClickNext: (e: SyntheticEvent) => void;
     handleClickPrev: (e: SyntheticEvent) => void;
 }
+
+export interface IArticle {
+    readonly id: number;
+    readonly name: string;
+    readonly alias: string;
+    readonly created_at: string;
+    readonly image: string;
+}
