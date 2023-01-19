@@ -1,7 +1,16 @@
 import {forward} from "effector";
-import {addressRequest, phoneRequest} from "./event";
-import {$address, $addressIsLoading, $phone, $phoneIsLoading} from "./store";
-import {fetchAddressFx, fetchPhoneFx} from "./fx";
+import {addressRequest, phoneRequest, emailRequest, workTimeRequest} from "./event";
+import {
+    $address,
+    $addressIsLoading,
+    $phone,
+    $phoneIsLoading,
+    $email,
+    $emailIsLoading,
+    $workTime,
+    $workTimeIsLoading
+} from "./store";
+import {fetchAddressFx, fetchEmailFx, fetchPhoneFx, fetchWorkTimeFx} from "./fx";
 
 $address
     .on(fetchAddressFx.doneData, (_, result) => result.data);
@@ -15,6 +24,14 @@ $phone
 $phoneIsLoading
     .on(fetchPhoneFx.pending, (_, isPending) => isPending);
 
+$email.on(fetchEmailFx.doneData, (_, result) => result.data);
+$emailIsLoading
+    .on(fetchEmailFx.pending, (_, isPending) => isPending);
+
+$workTime.on(fetchWorkTimeFx.doneData, (_, result) => result.data);
+$workTimeIsLoading
+    .on(fetchWorkTimeFx.pending, (_, isPending) => isPending);
+
 forward({
     from: addressRequest,
     to: fetchAddressFx
@@ -23,4 +40,14 @@ forward({
 forward({
     from: phoneRequest,
     to: fetchPhoneFx
+});
+
+forward({
+    from: emailRequest,
+    to: fetchEmailFx
+});
+
+forward({
+    from: workTimeRequest,
+    to: fetchWorkTimeFx
 });

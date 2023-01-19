@@ -6,3 +6,9 @@ export const $addressIsFailed = createStore<boolean>(false);
 
 export const $phone = createStore<string>('');
 export const $phoneIsLoading = createStore<boolean>(false);
+
+export const $email = createStore<string>('');
+export const $emailIsLoading = createStore<boolean>(false);
+
+export const $workTime = createStore<string>('');
+export const $workTimeIsLoading = createStore<boolean>(false);
