@@ -20,7 +20,7 @@ const MainCategory: FC<IMainCategory> = ({name, link, children, image}) => {
                     {children.map(item => <Link className={`py-2.5 px-3.5 whitespace-nowrap bg-[#fff] rounded-lg block`}
                                                 key={item.id} to={item.url}>{item.title}</Link>)}
                 </div>
-                <div className={`absolute bottom-0 right-2`}><img src={`${STORAGE_URL}/${image}`} alt=''/></div>
+                <div className={`absolute bottom-0 right-2 max-xl:hidden`}><img src={`${STORAGE_URL}/${image}`} alt=''/></div>
             </div>
         </section>
     );

@@ -17,7 +17,29 @@ const MainProduct: FC<IMainProduct> = ({heading, linkStock, products, productToS
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [length, setLength] = useState<number>(products.length);
     const [touchPosition, setTouchPosition] = useState<number | null>(null);
-    const [show] = useState<number>(productToShow);
+    const [show, setShow] = useState<number>(productToShow);
+
+    const resized = () => {
+        if (window.innerWidth > 1280) {
+            setShow(() => 5);
+        } else if (window.innerWidth > 1024 && window.innerWidth <= 1280) {
+            setShow(() => 4);
+        } else if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+            setShow(() => 3);
+        } else if (window.innerWidth > 640 && window.innerWidth <= 768) {
+            setShow(() => 2);
+        } else {
+            setShow(() => 1);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', resized);
+
+        return () => {
+            window.removeEventListener('resize', resized);
+        };
+    }, []);
 
     useEffect(() => {
         setLength(products.length);
