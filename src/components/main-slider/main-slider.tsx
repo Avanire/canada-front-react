@@ -2,6 +2,8 @@ import React, {FC, SyntheticEvent, useEffect, useState} from "react";
 import {useStore} from "effector-react";
 import {modelSliders} from "../../models/sliders";
 import Slide from "../slide/slide";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const MainSlider: FC = () => {
     const sliders = useStore(modelSliders.$sliders);
@@ -33,7 +35,7 @@ const MainSlider: FC = () => {
 
     return (
         <section className={`mb-32 flex justify-center`}>
-            {sliders.length ? (<Slide {...sliders[currentSlide]} handleClickNext={handleClickNext} handleClickPrev={handleClickPrev}/>) : null}
+            {sliders.length ? (<Slide {...sliders[currentSlide]} handleClickNext={handleClickNext} handleClickPrev={handleClickPrev}/>) : <div className={`w-full`}><Skeleton className={`h-96`} borderRadius={`24px`} /></div>}
         </section>
     );
 }
