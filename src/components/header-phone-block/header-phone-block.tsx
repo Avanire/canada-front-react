@@ -3,9 +3,9 @@ import Phone from "../phone/phone";
 
 const HeaderPhoneBlock: FC = () => {
     return (
-        <div className={`basis-40`}>
+        <div className={`flex gap-x-3 items-center ml-auto`}>
             <Phone/>
-            <div className={`text-[var(--link-color)] text-bases cursor-pointer`}>Заказать звонок</div>
+            <div className={`text-[var(--main-purple)] text-bases cursor-pointer`}>Заказать звонок</div>
         </div>
     );
 }

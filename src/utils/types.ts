@@ -22,6 +22,7 @@ export interface IProduct {
     readonly hit: boolean;
     readonly new_product: boolean;
     readonly recommended: boolean;
+    readonly charity: boolean;
 }
 
 export interface IBanner {

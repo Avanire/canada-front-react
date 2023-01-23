@@ -5,7 +5,7 @@ import MainMenu from "../main-menu/main-menu";
 
 const AppHeader: FC<{address: string}> = ({address}) => {
     return (
-        <header className={`mb-10`}>
+        <header>
             <div className={`container mx-auto`}>
                 <HeaderTop address={address}/>
                 <HeaderMiddle/>

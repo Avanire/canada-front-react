@@ -1,4 +1,4 @@
-import {addressRequest, phoneRequest, emailRequest, workTimeRequest} from "./event";
+import {addressRequest, phoneRequest, emailRequest, workTimeRequest, logoRequest} from "./event";
 import {
     $address,
     $addressIsLoading,
@@ -7,7 +7,9 @@ import {
     $email,
     $emailIsLoading,
     $workTime,
-    $workTimeIsLoading
+    $workTimeIsLoading,
+    $logo,
+    $logoIsLoading
 } from "./store";
 
 export const modelSetting = {
@@ -22,5 +24,8 @@ export const modelSetting = {
     $emailIsLoading,
     workTimeRequest,
     $workTime,
-    $workTimeIsLoading
+    $workTimeIsLoading,
+    logoRequest,
+    $logo,
+    $logoIsLoading
 }

@@ -3,12 +3,12 @@ import {IProduct} from "../../utils/types";
 import {RUB, STORAGE_URL} from "../../utils/constans";
 import styles from './product.module.css';
 import {Link} from "react-router-dom";
-import Bookmark from "../../images/Bookmark.svg";
-import HeaderButton from "../header-button/header-button";
 import Button from "../button/button";
 import hitImage from '../../images/hit.svg';
 import newImage from '../../images/new.svg';
 import star from '../../images/Feedbackstar.svg';
+import paw from '../../images/paws.svg';
+import bookmark from '../../images/Bookmark-product.svg';
 
 const Product: FC<IProduct> = ({
                                    image,
@@ -20,7 +20,8 @@ const Product: FC<IProduct> = ({
                                    price,
                                    old_price,
                                    hit,
-                                   new_product
+                                   new_product,
+                                   charity
                                }) => {
 
 
@@ -35,9 +36,10 @@ const Product: FC<IProduct> = ({
                     <span className={`${styles.tips} absolute bottom-3 left-3`}>-{Math.round(100 - (100 * (price / old_price)))}%</span>) : null}
                 <img src={STORAGE_URL + '/' + image} alt={name}/>
             </Link>
-            <div className={`mb-2.5`}>
+            <div className={`mb-2.5 flex gap-x-3 items-baseline`}>
+                {charity ? <img src={paw} alt=""/> : null}
                 {old_price ?
-                    (<><span className={`${styles.newPrice} mr-2`}>{price} {RUB}</span> <span
+                    (<><span className={`${styles.newPrice}`}>{price} {RUB}</span> <span
                         className={`${styles.oldPrice} line-through`}>{old_price} {RUB}</span></>) : (
                         <span className={`${styles.price}`}>{price} {RUB}</span>)
                 }
@@ -52,7 +54,7 @@ const Product: FC<IProduct> = ({
             </div>
             <div className={`flex mt-auto gap-x-3`}>
                 <Button name='В корзину'/>
-                <HeaderButton image={Bookmark} link='#'/>
+                <Link to={``} className={`p-3`}><img src={bookmark} alt=""/></Link>
             </div>
         </section>
     );

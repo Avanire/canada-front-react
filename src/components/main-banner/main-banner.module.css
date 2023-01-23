@@ -2,7 +2,7 @@
     border-radius: 24px;
 }
 .title {
-    color: var(--text-color);
+    color: var(--white-color);
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 140%;

@@ -1,16 +1,19 @@
 import React, {FC} from "react";
-import styles from './header-button.module.css';
+import {Link} from "react-router-dom";
 
 interface IHeaderButton {
-    image: string;
-    link: string;
+    readonly image: string;
+    readonly link: string;
+    readonly text: string;
+    readonly handleFunction?: () => void;
 }
 
-const HeaderButton: FC<IHeaderButton> = ({image, link}) => {
+const HeaderButton: FC<IHeaderButton> = ({image, link, text}) => {
     return (
-        <div className={styles.button}>
+        <Link to={link} className={`flex flex-col justify-center max-h-12`}>
             <img src={image} alt=""/>
-        </div>
+            <div className={`text-[var(--link-more)] text-center text-sm`}>{text}</div>
+        </Link>
     );
 }
 

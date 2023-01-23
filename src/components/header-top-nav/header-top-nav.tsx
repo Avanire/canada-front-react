@@ -16,7 +16,7 @@ const HeaderTopNav: FC = () => {
 
     return (
         <nav className={styles.nav}>
-            {isLoading ? <div className={`min-w-[360px]`}><Skeleton count={3} inline={true} width={`30%`} className={`mr-1.5`} /></div> : topMenu.map(item => <Link key={item.id} to={item.url} className={`text-sm text-[var(--link-color)]`}>{item.title}</Link>)}
+            {isLoading ? <div className={`min-w-[360px]`}><Skeleton count={3} inline={true} width={`30%`} className={`mr-1.5`} /></div> : topMenu.map(item => <Link key={item.id} to={item.url} className={`text-base text-[var(--link-color)]`}>{item.title}</Link>)}
         </nav>
 
     );

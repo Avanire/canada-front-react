@@ -6,9 +6,7 @@
 .menuItem {
     padding: 0.5625rem 0.875rem;
     position: relative;
-    border-radius: 12px;
-    border: 0.125rem solid rgba(129, 104, 240, 0.2);
-    color: var(--menu-link);
+    color: var(--text-color);
 }
 
 .menuItem:hover {
@@ -22,10 +20,8 @@
 }
 
 .cat {
-    background: rgba(129, 104, 240, 0.1);
     font-weight: 500;
     line-height: 110%;
-    color: var(--main-purple);
     border: unset;
 }
 
@@ -43,8 +39,6 @@
 
 .dog {
     composes: cat;
-    background: rgba(249, 128, 38, 0.1);
-    color: var(--main-orange);
 }
 
 .dog::before {
@@ -54,20 +48,13 @@
 .menuItemParent::after {
     content: '';
     position: absolute;
-    width: 14px;
-    height: 14px;
-    top: 17px;
+    width: 10px;
+    height: 10px;
+    top: 18px;
     right: 17px;
     cursor: pointer;
     background-repeat: no-repeat;
-}
-
-.cat::after {
-    background-image: url("../../images/arrow-down-purple.svg");
-}
-
-.dog::after {
-    background-image: url("../../images/arrow-down-orange.svg");
+    background-image: url("../../images/arrow-down-gray.svg");
 }
 
 .childrenMenu {

@@ -34,7 +34,7 @@ const MainSlider: FC = () => {
     }
 
     return (
-        <section className={`mb-32 flex justify-center`}>
+        <section className={`mb-10 flex justify-center`}>
             {sliders.length ? (<Slide {...sliders[currentSlide]} handleClickNext={handleClickNext} handleClickPrev={handleClickPrev}/>) : <div className={`w-full`}><Skeleton className={`h-96`} borderRadius={`24px`} /></div>}
         </section>
     );

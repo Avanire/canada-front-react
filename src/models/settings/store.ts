@@ -12,3 +12,6 @@ export const $emailIsLoading = createStore<boolean>(false);
 
 export const $workTime = createStore<string>('');
 export const $workTimeIsLoading = createStore<boolean>(false);
+
+export const $logo = createStore<string>('');
+export const $logoIsLoading = createStore<boolean>(false);

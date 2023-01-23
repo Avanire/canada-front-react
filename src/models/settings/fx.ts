@@ -5,3 +5,4 @@ export const fetchAddressFx = createEffect((params: string) => getSettingByName(
 export const fetchPhoneFx = createEffect((params: string) => getSettingByName(params));
 export const fetchEmailFx = createEffect((params: string) => getSettingByName(params));
 export const fetchWorkTimeFx = createEffect((params: string) => getSettingByName(params));
+export const fetchLogoFx = createEffect((params: string) => getSettingByName(params));

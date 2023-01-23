@@ -15,7 +15,7 @@ module.exports = {
                 'product-new-price': '#FD4D63',
                 'product-cart-color': '#787878',
                 'product-tips-color': '#FF4A5F',
-                'link-more': '#7A7A7A',
+                'link-more': '#6B7176',
                 'slider-btn-bg': 'rgba(246, 247, 249, 0.2)',
                 'gray-1': '#333333',
                 'main-purple': '#8168F0',

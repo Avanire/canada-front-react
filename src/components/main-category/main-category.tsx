@@ -13,14 +13,13 @@ interface IMainCategory {
 
 const MainCategory: FC<IMainCategory> = ({name, link, children, image}) => {
     return (
-        <section className={`${styles.category} p-8 flex-auto relative`}>
-            <h3 className={`mb-10 font-semibold text-4xl`}><Link to={link}>{name}</Link></h3>
-            <div>
-                <div className={`grid grid-rows-2 grid-flow-col-dense gap-2 max-w-[12rem]`}>
-                    {children.map(item => <Link className={`py-2.5 px-3.5 whitespace-nowrap bg-[#fff] rounded-lg block`}
-                                                key={item.id} to={item.url}>{item.title}</Link>)}
+        <section className={`${styles.category} flex-auto relative flex items-center`}>
+            <div className={`pr-12`}><img src={`${STORAGE_URL}/${image}`} alt=''/></div>
+            <div className={``}>
+                <h3 className={`font-medium text-3xl pb-6`}><Link to={link}>{name}</Link></h3>
+                <div className={`flex gap-5 flex-wrap max-w-[219px]`}>
+                    {children.map(item => <Link className={``} key={item.id} to={item.url}>{item.title}</Link>)}
                 </div>
-                <div className={`absolute bottom-0 right-2 max-xl:hidden`}><img src={`${STORAGE_URL}/${image}`} alt=''/></div>
             </div>
         </section>
     );

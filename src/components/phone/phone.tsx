@@ -13,7 +13,7 @@ const Phone: FC = () => {
     }, []);
 
     return (
-        phoneIsLoading ? <Skeleton /> : <a className={`font-medium text-lg text-[var(--text-color)]`} href={`tel:${phone.replace(/\D/g, '')}`}>{phone}</a>
+        phoneIsLoading ? <Skeleton width={122} height={22} /> : <a className={`font-medium text-base text-[var(--text-color)]`} href={`tel:${phone.replace(/\D/g, '')}`}>{phone}</a>
     );
 }
 
