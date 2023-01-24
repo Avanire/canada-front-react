@@ -48,7 +48,7 @@ const Product: FC<IProduct> = ({
             <div className={`flex gap-x-3 items-center mb-3`}>
                 <div className={`flex`}>
                     <img src={star} alt="" className={`mr-0.5`}/>
-                    <span className={`text-[var(--menu-link)] text-sm `}>4.9</span>
+                    <span className={`text-menuLink text-sm `}>4.9</span>
                 </div>
                 <div className={`${styles.brand}`}>{brand}</div>
             </div>

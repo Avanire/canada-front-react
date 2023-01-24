@@ -5,7 +5,7 @@ const HeaderPhoneBlock: FC = () => {
     return (
         <div className={`flex gap-x-3 items-center ml-auto`}>
             <Phone/>
-            <div className={`text-[var(--main-purple)] text-bases cursor-pointer`}>Заказать звонок</div>
+            <div className={`text-mainPurple text-bases cursor-pointer`}>Заказать звонок</div>
         </div>
     );
 }
